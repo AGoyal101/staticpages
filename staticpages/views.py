@@ -3,10 +3,11 @@ from django.shortcuts import render
 # Create your views here.
 
 # staticpages/views.py
-from django.http import HttpResponse
+from django.views.generic import TemplateView
 
-def home_page_view(request):
-	return HttpResponse("My staticpages homepage.")
 
-def about_page_view(request):
-	return HttpResponse("About page.")
+class Home_page_view(TemplateView):
+	template_name = 'staticpages/index.html'
+
+class About_page_view(TemplateView):
+	template_name = 'staticpages/about.html'
